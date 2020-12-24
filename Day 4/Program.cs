@@ -105,8 +105,12 @@ namespace Day_4
             return false;
         }
 
+        static string red = "\u001b[31;1m";
+        static string reset = "\u001b[0m";
+
         static void PartTwo(List<string> passportList)
         {
+            var invalidCounter = 0;
             var validCounter = 0;
             foreach (var passport in passportList)
             {
@@ -120,10 +124,11 @@ namespace Day_4
                         var field = fields[currentField++];
                         var data = fields[currentField++];
                         var isValid = ValidateField(field, data);
-                        Console.Write($"{field}:{data}[{(isValid?"OK":"NO")}] ");
+                        Console.Write($"{(!isValid ? red : "")}{field}:{data}{(!isValid ? reset : "")} ");
                         if (!isValid)
                         {
-                            //break;
+                            invalidCounter++;
+                            break;
                         }
                         else
                         {
@@ -137,7 +142,7 @@ namespace Day_4
                     }
                 }
             }
-            Console.WriteLine($"{validCounter}");
+            Console.WriteLine($"valid [{validCounter}] invalid [{invalidCounter}]");
         }
 
         static void Main(string[] args)
@@ -146,7 +151,7 @@ namespace Day_4
             var CRLF = "\r\n"; // text file saved on windows            
             List<string> data = new List<string>(rawData.Replace(CRLF + CRLF, "#@!?").Replace(CRLF, " ").Split("#@!?"));
             PartOne(data);
-            PartTwo(data);
+            PartTwo(data); // 125 incorrect
         }
     }
 }
