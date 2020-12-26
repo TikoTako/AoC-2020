@@ -20,7 +20,7 @@ Each day have his input.txt, there is an input-result list in the [FAQ](#faq) in
 ---
 
 ## FAQ
-- **Results**
+- **Results [input.txt into each day directory]**
     ```<language>
     https://adventofcode.com/2020/day/1
     Your puzzle answer was 913824.
