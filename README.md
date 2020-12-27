@@ -49,6 +49,10 @@ Each day have his input.txt, there is an input-result list in the [FAQ](#faq) in
     https://adventofcode.com/2020/day/7
     Your puzzle answer was 119.
     Your puzzle answer was 155802.
+
+    https://adventofcode.com/2020/day/8
+    Your puzzle answer was 1137.
+    Your puzzle answer was 1125.
     ```
    
 ---
